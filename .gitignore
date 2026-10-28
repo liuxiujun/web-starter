@@ -1,0 +1,13 @@
+# Exclude markdown notes (maintained independently in personal note-taking app)
+*.md
+*.markdown
+
+# Always preserve project READMEs
+!README.md
+!**/README.md
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
