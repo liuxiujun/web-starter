@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Starter (React + AntD)</title>
+    <!-- 原生 Anti-FOUC 防白闪微脚本：在首屏绘制前直读外存主题标记 -->
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('app_storage');
+          var theme = raw ? JSON.parse(raw).state?.settings?.theme : localStorage.getItem('app_theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = theme === 'dark' || (!theme && prefersDark);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.backgroundColor = '#141414';
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.backgroundColor = '#ffffff';
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
