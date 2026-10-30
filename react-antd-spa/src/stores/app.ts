@@ -30,7 +30,6 @@ export const useAppStore = create<AppState>()(
       settings: {
         systemName: "Web Starter",
         theme: (function () {
-          // 优先检测系统偏好
           return typeof window !== "undefined" &&
             window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"

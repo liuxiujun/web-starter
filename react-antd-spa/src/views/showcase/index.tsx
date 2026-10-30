@@ -23,7 +23,6 @@ export function ShowcaseContent() {
   const locale = useAppStore((s) => s.settings.locale);
   const setTheme = useAppStore((s) => s.setTheme);
   const setLocale = useAppStore((s) => s.setLocale);
-
   const toggleTheme = () => {
     const next = themeMode === "dark" ? "light" : "dark";
     setTheme(next);
